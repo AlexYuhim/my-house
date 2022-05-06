@@ -4,11 +4,15 @@
         "prettier"
     ],
     "rules": {
+         "no-restricted-globals":"off", 
         "jsx-quotes": [
             1,
             "prefer-double"
-        ]
+        ],
+        
+        
     },
+    
         "env": {
         "browser": true,//по
         "es6": true,
