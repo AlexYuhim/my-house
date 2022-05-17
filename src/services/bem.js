@@ -5,6 +5,22 @@ function bem(block) {
     let element = '';
     let mod = '';
 
+    function valueModFromObj(obj, element) {
+      let valueFromObj = '';
+
+      Object.keys(obj).forEach((key) => {
+        if (obj[key]) {
+          valueFromObj += ' ' + block + element + '_' + key;
+        }
+
+        if (typeof obj[key] === 'string') {
+          valueFromObj += '_' + obj[key];
+        }
+      });
+
+      return valueFromObj;
+    }
+
     // 1 есть  блок нет элемента нет модификатора
 
     if (!elementOrMod && !modif) {
@@ -18,30 +34,16 @@ function bem(block) {
 
     // 3 есть блок  нет элемента, есть модификатор
     if (typeof elementOrMod === 'object') {
-      Object.keys(elementOrMod).forEach((key) => {
-        if (elementOrMod[key]) {
-          mod += ' ' + block + '_' + key;
-        }
-
-        if (typeof elementOrMod[key] === 'string') {
-          mod += '_' + elementOrMod[key];
-        }
-      });
+      mod = valueModFromObj(elementOrMod, '');
     }
 
     // 4 есть блок есть елемент,есть модификатор
     if (typeof elementOrMod === 'string' && typeof modif === 'object') {
       element = '__' + elementOrMod;
-      Object.keys(modif).forEach((key) => {
-        if (modif[key]) {
-          mod += ' ' + block + element + '_' + key;
-        }
 
-        if (typeof modif[key] === 'string') {
-          mod += '_' + modif[key];
-        }
-      });
+      mod = valueModFromObj(modif, element);
     }
+
     resultString = block + element + mod;
 
     return resultString;
@@ -52,7 +54,7 @@ const block = bem('block');
 
 console.log(block()); // block
 console.log(block({ main: true, size: 'view' }));
-console.log(block({ modA: true, modB: false, modC: 'value' })); // block block_modA block_modC_value
+console.log(block({ modA: true, modB: true, modC: 'value' })); // block block_modA block_modC_value
 console.log(block('element')); // block__element
 console.log(block('element', { modA: true })); // block__element block__element_modA
 console.log(block('element', { modA: false, modB: 'value' })); // block__element block__element_modB_value
