@@ -21,23 +21,14 @@ function bem(block) {
       return valueFromObj;
     }
 
-    // 1 есть  блок нет элемента нет модификатора
-
-    if (!elementOrMod && !modif) {
-      return block;
-    }
-    // 2 есть  блок , есть элемент нет модификатор
-
     if (typeof elementOrMod === 'string') {
       element = '__' + elementOrMod;
     }
 
-    // 3 есть блок  нет элемента, есть модификатор
     if (typeof elementOrMod === 'object') {
       mod = valueModFromObj(elementOrMod, '');
     }
 
-    // 4 есть блок есть елемент,есть модификатор
     if (typeof elementOrMod === 'string' && typeof modif === 'object') {
       element = '__' + elementOrMod;
 
