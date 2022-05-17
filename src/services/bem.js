@@ -1,31 +1,48 @@
-function bem(argBlock) {
+function bem(block) {
   let resultString = '';
 
-  return function (...args) {
-    let argElement = '';
-    let argMod = '';
-
-    for (let i = 0; i < args.length; i++) {
-      if (typeof args[i] === 'string') {
-        argElement = '__' + args[i];
-      } else if (typeof args[i] === 'object') {
-        argMod = args[i];
-      }
-    }
-
+  return function (elementOrMod, modif) {
+    let element = '';
     let mod = '';
 
-    Object.keys(argMod).forEach((modValue) => {
-      if (argMod[modValue]) {
-        mod += ' ' + argBlock + argElement + '_' + modValue;
-      }
+    // 1 есть  блок нет элемента нет модификатора
 
-      if (typeof argMod[modValue] === 'string') {
-        mod += '_' + argMod[modValue];
-      }
-    });
+    if (!elementOrMod && !modif) {
+      return block;
+    }
+    // 2 есть  блок , есть элемент нет модификатор
 
-    resultString = argBlock + argElement + mod;
+    if (typeof elementOrMod === 'string') {
+      element = '__' + elementOrMod;
+    }
+
+    // 3 есть блок  нет элемента, есть модификатор
+    if (typeof elementOrMod === 'object') {
+      Object.keys(elementOrMod).forEach((key) => {
+        if (elementOrMod[key]) {
+          mod += ' ' + block + '_' + key;
+        }
+
+        if (typeof elementOrMod[key] === 'string') {
+          mod += '_' + elementOrMod[key];
+        }
+      });
+    }
+
+    // 4 есть блок есть елемент,есть модификатор
+    if (typeof elementOrMod === 'string' && typeof modif === 'object') {
+      element = '__' + elementOrMod;
+      Object.keys(modif).forEach((key) => {
+        if (modif[key]) {
+          mod += ' ' + block + element + '_' + key;
+        }
+
+        if (typeof modif[key] === 'string') {
+          mod += '_' + modif[key];
+        }
+      });
+    }
+    resultString = block + element + mod;
 
     return resultString;
   };
