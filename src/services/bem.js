@@ -1,22 +1,15 @@
-function joinArgs(...argBem) {
-  return argBem.join('-');
-}
-
-function bem() {
+function bem(argBlock) {
   let resultString = '';
-  let argBem = [];
 
-  argBem = joinArgs(...arguments);
-
-  return function () {
+  return function (...args) {
     let argElement = '';
     let argMod = '';
 
-    for (let i = 0; i < arguments.length; i++) {
-      if (typeof arguments[i] === 'string') {
-        argElement = '__' + arguments[i];
-      } else if (typeof arguments[i] === 'object') {
-        argMod = arguments[i];
+    for (let i = 0; i < args.length; i++) {
+      if (typeof args[i] === 'string') {
+        argElement = '__' + args[i];
+      } else if (typeof args[i] === 'object') {
+        argMod = args[i];
       }
     }
 
@@ -24,7 +17,7 @@ function bem() {
 
     Object.keys(argMod).forEach((modValue) => {
       if (argMod[modValue]) {
-        mod += ' ' + argBem + argElement + '_' + modValue;
+        mod += ' ' + argBlock + argElement + '_' + modValue;
       }
 
       if (typeof argMod[modValue] === 'string') {
@@ -32,7 +25,7 @@ function bem() {
       }
     });
 
-    resultString = argBem + argElement + mod;
+    resultString = argBlock + argElement + mod;
 
     return resultString;
   };
