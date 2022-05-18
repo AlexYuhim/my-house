@@ -1,25 +1,23 @@
 function bem(block) {
-  let resultString = '';
+  function valueModFromObj(obj, element) {
+    let valueFromObj = '';
+
+    Object.keys(obj).forEach((key) => {
+      if (obj[key]) {
+        valueFromObj += ' ' + block + element + '_' + key;
+      }
+
+      if (typeof obj[key] === 'string') {
+        valueFromObj += '_' + obj[key];
+      }
+    });
+
+    return valueFromObj;
+  }
 
   return function (elementOrMod, modif) {
     let element = '';
     let mod = '';
-
-    function valueModFromObj(obj, element) {
-      let valueFromObj = '';
-
-      Object.keys(obj).forEach((key) => {
-        if (obj[key]) {
-          valueFromObj += ' ' + block + element + '_' + key;
-        }
-
-        if (typeof obj[key] === 'string') {
-          valueFromObj += '_' + obj[key];
-        }
-      });
-
-      return valueFromObj;
-    }
 
     if (typeof elementOrMod === 'string') {
       element = '__' + elementOrMod;
@@ -35,9 +33,7 @@ function bem(block) {
       mod = valueModFromObj(modif, element);
     }
 
-    resultString = block + element + mod;
-
-    return resultString;
+    return block + element + mod;
   };
 }
 
