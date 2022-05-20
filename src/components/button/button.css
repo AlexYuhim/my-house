@@ -1,0 +1,52 @@
+.button {
+  border-radius: 4px;
+  cursor: pointer;
+  border: 0;
+}
+.button_variant_icon {
+  background-image: url(../../img/svg/lup.svg);
+  background-position: 5px 24px;
+  background-repeat: no-repeat;
+  background-color: radial-gradient(
+    215.52% 2821.19% at -21.05% -115.52%,
+    #59f0d5 0%,
+    #28c58c 100%
+  );
+  padding: 24px 29px;
+}
+.button_variant_basic_icon {
+  color: white;
+  padding: 24px 26px;
+  background: radial-gradient(
+    215.52% 2821.19% at -21.05% -115.52%,
+    #59f0d5 0%,
+    #28c58c 100%
+  );
+}
+.button_variant_basic {
+  color: white;
+  padding: 15px 29px 15px 29px;
+  background: radial-gradient(
+    215.52% 2821.19% at -21.05% -115.52%,
+    #59f0d5 0%,
+    #28c58c 100%
+  );
+}
+.button_variant_blocked {
+  padding: 15px 29px;
+  color: white;
+  background: #b4b4b4;
+}
+.button_variant_secondary {
+  padding: 15px 29px;
+  background: #fff;
+  color: black;
+  border: 1px solid #b4b4b4;
+}
+.button_variant_default {
+  background: gray;
+  color: rgb(42, 76, 54);
+}
+.button_size_basic {
+  padding: 15px 29px;
+}
