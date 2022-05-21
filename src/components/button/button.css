@@ -1,0 +1,40 @@
+.button {
+  display: flex;
+  align-items: center;
+  background: none;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  padding: 14px 28px;
+  font-size: 14px;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+.button:disabled {
+  background: #b4b4b4;
+  cursor: default;
+}
+
+.button_view_primary {
+  color: #fff;
+  background: radial-gradient(
+    215.52% 2821.19% at -21.05% -115.52%,
+    #59f0d5 0%,
+    #28c58c 100%
+  );
+}
+
+.button_view_secondary {
+  background: #fff;
+  color: #000;
+  border-color: #b4b4b4;
+}
+
+.button__icon {
+  margin-right: 10px;
+}
+
+.button__icon svg {
+  width: 16px;
+  height: 16px;
+}
