@@ -10,6 +10,7 @@
   font-weight: 700;
   border: 1px solid transparent;
 }
+
 .button:disabled {
   background: #b4b4b4;
   cursor: default;
@@ -30,8 +31,8 @@
   border-color: #b4b4b4;
 }
 
-.button__icon {
-  margin-right: 10px;
+.button__label {
+  margin-left: 10px;
 }
 
 .button__icon svg {

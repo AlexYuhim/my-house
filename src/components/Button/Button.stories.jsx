@@ -28,6 +28,12 @@ WithIcon.args = {
   icon: <Icon />,
 };
 
+export const WithoutText = Tamplate.bind({});
+
+WithoutText.args = {
+  icon: <Icon />,
+};
+
 export default {
   title: 'Example/Button',
   component: Button,

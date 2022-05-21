@@ -14,6 +14,7 @@ const Button = ({
   type = 'button',
 }) => {
   const hasIcon = Boolean(icon);
+  const hasLabel = Boolean(children);
 
   return (
     <button
@@ -23,17 +24,20 @@ const Button = ({
       type={type}
     >
       {hasIcon && <span className={block('icon')}>{icon}</span>}
-      {children}
+
+      {hasLabel && <span className={block('label')}>{children}</span>}
     </button>
   );
 };
 
 Button.propTypes = {
-  disabled: PropTypes.bool,
+  /** Иконка  */
   icon: PropTypes.node,
+
   view: PropTypes.oneOf(['primary', 'secondary']),
   children: PropTypes.string,
   onClick: PropTypes.func,
   type: PropTypes.string,
+  disabled: PropTypes.bool,
 };
 export default Button;
