@@ -4,6 +4,8 @@ import bem from '../../services/bem';
 
 import './Button.css';
 
+console.log('Привет');
+
 const block = bem('button');
 const Button = ({
   disabled,
