@@ -2,41 +2,38 @@ import PropTypes from 'prop-types';
 
 import bem from '../../services/bem';
 
-import './button.css';
+import './Button.css';
 
+const block = bem('button');
 const Button = ({
-  // icon,
+  disabled,
+  icon,
+  view = 'secondary',
   onClick,
-  variant,
-  children = 'button',
+  children,
   type = 'button',
 }) => {
-  const myClass = bem('button');
+  const hasIcon = Boolean(icon);
 
   return (
     <button
-      className={myClass({ variant: variant })}
+      disabled={disabled}
+      className={block({ view })}
       onClick={onClick}
       type={type}
     >
-      <div className=''>
-        {/* {icon} */}
-        {children}
-      </div>
+      {hasIcon && <span className={block('icon')}>{icon}</span>}
+      {children}
     </button>
   );
 };
 
 Button.propTypes = {
+  disabled: PropTypes.bool,
+  icon: PropTypes.node,
+  view: PropTypes.oneOf(['primary', 'secondary']),
   children: PropTypes.string,
   onClick: PropTypes.func,
   type: PropTypes.string,
-  variant: PropTypes.oneOf([
-    'basic_icon',
-    'basic',
-    'blocked',
-    'secondary',
-    'icon',
-  ]),
 };
 export default Button;

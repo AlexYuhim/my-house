@@ -1,46 +1,34 @@
 import React from 'react';
 
 import './button.css';
-// import lup from '../../img/svg/';
+import { ReactComponent as Icon } from '../../icons/loupe.svg';
 
-import Button from './button';
+import Button from './Button';
+
+const Tamplate = (args) => <Button {...args} />;
+
+export const Primary = Tamplate.bind({});
+
+Primary.args = {
+  children: 'Нажми меня',
+  view: 'primary',
+};
+
+export const Secondary = Tamplate.bind({});
+
+Secondary.args = {
+  children: 'Нажми меня',
+  view: 'secondary',
+};
+
+export const WithIcon = Tamplate.bind({});
+
+WithIcon.args = {
+  children: 'Нажми меня',
+  icon: <Icon />,
+};
 
 export default {
   title: 'Example/Button',
   component: Button,
-};
-
-export const Tamplate = (args) => <Button {...args} />;
-
-export const Basic = Tamplate.bind({});
-
-Basic.args = {
-  children: 'Подписаться',
-  variant: 'basic',
-};
-
-export const Blocked = Tamplate.bind({});
-
-Blocked.args = {
-  children: 'Подписаться',
-  variant: 'blocked',
-};
-export const Secondary = Tamplate.bind({});
-
-Secondary.args = {
-  children: 'Подписаться',
-  variant: 'secondary',
-};
-
-export const BasicIcon = Tamplate.bind({});
-
-BasicIcon.args = {
-  children: ' Подобрать',
-  variant: 'basic_icon',
-};
-export const Icon = Tamplate.bind({});
-
-Icon.args = {
-  children: 'Подобрать',
-  variant: 'icon',
 };

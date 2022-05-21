@@ -1,52 +1,40 @@
 .button {
+  display: flex;
+  align-items: center;
+  background: none;
   border-radius: 4px;
   cursor: pointer;
-  border: 0;
+  border: none;
+  padding: 14px 28px;
+  font-size: 14px;
+  font-weight: 700;
+  border: 1px solid transparent;
 }
-.button_variant_icon {
-  background-image: url(../../img/svg/lup.svg);
-  background-position: 5px 24px;
-  background-repeat: no-repeat;
-  background-color: radial-gradient(
-    215.52% 2821.19% at -21.05% -115.52%,
-    #59f0d5 0%,
-    #28c58c 100%
-  );
-  padding: 24px 29px;
-}
-.button_variant_basic_icon {
-  color: white;
-  padding: 24px 26px;
-  background: radial-gradient(
-    215.52% 2821.19% at -21.05% -115.52%,
-    #59f0d5 0%,
-    #28c58c 100%
-  );
-}
-.button_variant_basic {
-  color: white;
-  padding: 15px 29px 15px 29px;
-  background: radial-gradient(
-    215.52% 2821.19% at -21.05% -115.52%,
-    #59f0d5 0%,
-    #28c58c 100%
-  );
-}
-.button_variant_blocked {
-  padding: 15px 29px;
-  color: white;
+.button:disabled {
   background: #b4b4b4;
+  cursor: default;
 }
-.button_variant_secondary {
-  padding: 15px 29px;
+
+.button_view_primary {
+  color: #fff;
+  background: radial-gradient(
+    215.52% 2821.19% at -21.05% -115.52%,
+    #59f0d5 0%,
+    #28c58c 100%
+  );
+}
+
+.button_view_secondary {
   background: #fff;
-  color: black;
-  border: 1px solid #b4b4b4;
+  color: #000;
+  border-color: #b4b4b4;
 }
-.button_variant_default {
-  background: gray;
-  color: rgb(42, 76, 54);
+
+.button__icon {
+  margin-right: 10px;
 }
-.button_size_basic {
-  padding: 15px 29px;
+
+.button__icon svg {
+  width: 16px;
+  height: 16px;
 }
