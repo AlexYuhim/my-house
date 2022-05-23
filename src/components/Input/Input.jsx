@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// import { ReactComponent as Icon } from '../../icons/loupe.svg';
 import bem from '../../services/bem';
 
 const block = bem('input');
@@ -21,7 +20,6 @@ const Input = ({
   return (
     <div className={block()}>
       <fieldset disabled={disabled} className={block('fiedsetgrup')}>
-        {/* { && <legend>Имя</legend>} */}
         {hasPrefix && <span>{prefix}</span>}
         <input
           onChange={onChange}
