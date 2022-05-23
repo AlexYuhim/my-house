@@ -1,0 +1,47 @@
+.input {
+  padding: 0;
+  margin: 0;
+}
+
+.input__fiedsetgrup {
+  display: flex;
+  border: 1px solid #d7d7d7;
+  border-radius: 4px;
+  padding: 14px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+input {
+  border: none;
+  font-family: 'Montserrat', Courier, monospace;
+
+  outline: none;
+  color: #616161;
+  font-size: 16px;
+  font-weight: 400;
+}
+input:hover,
+input:focus {
+  background: #f6f9fc;
+}
+.input__fiedsetgrup:disabled {
+  background: #e7e5e5;
+}
+
+span {
+  margin-right: 12px;
+}
+
+.input__prefix {
+  width: 14px;
+  height: 14px;
+}
+
+.input__error {
+  color: #ff8b8b;
+}
+
+.input__warning {
+  color: #ffab40;
+}

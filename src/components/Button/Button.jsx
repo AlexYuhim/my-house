@@ -33,11 +33,15 @@ const Button = ({
 Button.propTypes = {
   /** Иконка  */
   icon: PropTypes.node,
-
+  /** Вид отображаение */
   view: PropTypes.oneOf(['primary', 'secondary']),
+  /** передаваемое значение  */
   children: PropTypes.string,
+  /** Функция-обработчик клика */
   onClick: PropTypes.func,
+  /** Тип кнопки */
   type: PropTypes.string,
+  /** Статус disable */
   disabled: PropTypes.bool,
 };
 export default Button;
