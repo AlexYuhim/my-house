@@ -35,6 +35,6 @@ WithoutText.args = {
 };
 
 export default {
-  title: 'Example/Button',
+  title: 'Button',
   component: Button,
 };

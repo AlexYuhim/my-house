@@ -10,37 +10,47 @@ const Tamplate = (args) => <Input {...args} />;
 export const InputDefault = Tamplate.bind({});
 
 InputDefault.args = {
-  placeHolder: 'Имя',
+  placeholder: ' ',
+  label: 'Введите Ваше имя',
 };
 
 export const ImputSearch = Tamplate.bind({});
 
 ImputSearch.args = {
-  placeHolder: 'Поиск',
+  placeholder: ' ',
+  label: 'Что ищем?',
   prefix: <Icon />,
 };
 
 export const ValidationError = Tamplate.bind({});
 
 ValidationError.args = {
-  placeHolder: 'Введенная информация',
-  status: 'error',
+  placeholder: ' ',
+  label: 'Введите Ваше имя',
+  status: {
+    type: 'error',
+    message: 'Упс, ошибочка вышла...',
+  },
 };
 
 export const ValidationWarning = Tamplate.bind({});
 
 ValidationWarning.args = {
-  placeHolder: 'Введенная информация',
-  status: 'warning',
-  statusMessage: 'Текст-предупреждение',
+  placeholder: ' ',
+  label: 'Введите Ваше имя',
+  status: {
+    type: 'warning',
+    message: 'Предупреждение...',
+  },
 };
 
 export const EnterInfo = Tamplate.bind({});
 
 EnterInfo.args = {
-  placeHolder: 'Введенная информация',
+  placeholder: ' ',
+  label: 'Введите Ваше имя',
 };
 export default {
-  title: 'Example/Input',
+  title: 'Input',
   component: Input,
 };

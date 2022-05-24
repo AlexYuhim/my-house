@@ -4,8 +4,6 @@ import bem from '../../services/bem';
 
 import './Button.css';
 
-console.log('Привет');
-
 const block = bem('button');
 const Button = ({
   disabled,
@@ -35,14 +33,14 @@ const Button = ({
 Button.propTypes = {
   /** Иконка  */
   icon: PropTypes.node,
-  /** Вид отображаение */
+  /** Вид отображаения */
   view: PropTypes.oneOf(['primary', 'secondary']),
   /** передаваемое значение  */
   children: PropTypes.string,
   /** Функция-обработчик клика */
   onClick: PropTypes.func,
   /** Тип кнопки */
-  type: PropTypes.string,
+  type: PropTypes.oneOf(['button', 'submit', 'reset', 'menu']),
   /** Статус disable */
   disabled: PropTypes.bool,
 };
