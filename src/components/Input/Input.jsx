@@ -5,16 +5,7 @@ import bem from '../../services/bem';
 
 const block = bem('input');
 
-const Input = ({
-  value,
-  onChange,
-  status,
-  prefix,
-  disabled,
-  type,
-  label,
-  placeholder,
-}) => {
+const Input = ({ value, onChange, status, prefix, disabled, type, label }) => {
   const hasPrefix = Boolean(prefix);
 
   return (
@@ -25,7 +16,7 @@ const Input = ({
         className={block('inputField')}
         onChange={onChange}
         value={value}
-        placeholder={placeholder}
+        placeholder=' '
         type={type}
       />
       <div className={block('label')}>{label}</div>
@@ -44,8 +35,6 @@ Input.propTypes = {
   value: PropTypes.string,
   /** Функция-обработчик ввода */
   onChange: PropTypes.func,
-  /** Текст-подсказка к вводу */
-  placeholder: PropTypes.string,
   /** Статус валидации */
   status: PropTypes.objectOf(PropTypes.string),
   /** Иконка перед текстом в инпуте */

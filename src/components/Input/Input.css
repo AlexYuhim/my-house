@@ -1,7 +1,5 @@
-body {
-  font-family: 'Montserrat', Courier, monospace;
-}
-
+/* stylelint-disable selector-class-pattern */
+/* stylelint-disable indentation */
 .input {
   width: 488px;
   display: flex;
@@ -46,14 +44,14 @@ body {
 }
 
 .input__error {
-  left: 0px;
+  left: 0;
   top: 45px;
   position: absolute;
   color: #ff8b8b;
 }
 
 .input__warning {
-  left: 0px;
+  left: 0;
   top: 45px;
   position: absolute;
   color: #ffab40;

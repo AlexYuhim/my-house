@@ -10,14 +10,12 @@ const Tamplate = (args) => <Input {...args} />;
 export const InputDefault = Tamplate.bind({});
 
 InputDefault.args = {
-  placeholder: ' ',
   label: 'Введите Ваше имя',
 };
 
 export const ImputSearch = Tamplate.bind({});
 
 ImputSearch.args = {
-  placeholder: ' ',
   label: 'Что ищем?',
   prefix: <Icon />,
 };
@@ -25,7 +23,6 @@ ImputSearch.args = {
 export const ValidationError = Tamplate.bind({});
 
 ValidationError.args = {
-  placeholder: ' ',
   label: 'Введите Ваше имя',
   status: {
     type: 'error',
@@ -36,7 +33,6 @@ ValidationError.args = {
 export const ValidationWarning = Tamplate.bind({});
 
 ValidationWarning.args = {
-  placeholder: ' ',
   label: 'Введите Ваше имя',
   status: {
     type: 'warning',
@@ -47,7 +43,6 @@ ValidationWarning.args = {
 export const EnterInfo = Tamplate.bind({});
 
 EnterInfo.args = {
-  placeholder: ' ',
   label: 'Введите Ваше имя',
 };
 export default {
