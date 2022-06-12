@@ -1,5 +1,6 @@
-import '../src/styles/main.css';
 import 'normalize.css/normalize.css';
+import '../src/styles/main.css';
+
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {

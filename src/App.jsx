@@ -1,7 +1,7 @@
 import React from 'react';
-
-import '../src/styles/main.css';
 import 'normalize.css/normalize.css';
+import '../src/styles/main.css';
+
 import Button from './components/Button/Button';
 import Input from './components/Input/Input';
 

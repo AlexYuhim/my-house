@@ -20,16 +20,19 @@ const Input = ({ value, onChange, status, prefix, disabled, type, label }) => {
         type={type}
       />
       <div className={block('label')}>{label}</div>
-      {status && <span className={block(status.type)}>{status.message}</span>}
+      {status && (
+        <span className={block('status', { [status.type]: Boolean(status) })}>
+          {status.message}
+        </span>
+      )}
     </label>
   );
 };
 
 Input.propTypes = {
+  /** Текстовая метка для элемента input*/
   label: PropTypes.string,
-  /** Идентификатор inout */
-  id: PropTypes.string,
-  /** Тип поля инпута */
+  /** Идентификатор input */
   type: PropTypes.oneOf(['text', 'password']),
   /** Текущее значение  */
   value: PropTypes.string,

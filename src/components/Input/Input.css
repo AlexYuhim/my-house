@@ -43,16 +43,16 @@
   margin-right: 10px;
 }
 
-.input__error {
+.input__status {
   left: 0;
   top: 45px;
   position: absolute;
-  color: #ff8b8b;
 }
 
-.input__warning {
-  left: 0;
-  top: 45px;
-  position: absolute;
+.input__status_error {
+  color: #f44949;
+}
+
+.input__status_warning {
   color: #ffab40;
 }
