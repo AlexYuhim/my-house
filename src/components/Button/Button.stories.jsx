@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './button.css';
+import './Button.css';
 import { ReactComponent as Icon } from '../../icons/loupe.svg';
 
 import Button from './Button';
@@ -35,6 +35,6 @@ WithoutText.args = {
 };
 
 export default {
-  title: 'Example/Button',
+  title: 'Button',
   component: Button,
 };

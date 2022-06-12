@@ -8,6 +8,7 @@ module.exports = {
       jsx: true,
     },
   },
+
   extends: [
     'react-app',
     'react-app/jest',
@@ -18,7 +19,9 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:import/recommended',
   ],
+
   plugins: ['react', 'react-hooks', 'sonarjs'],
+
   rules: {
     'sonarjs/no-duplicate-string': 'off',
     curly: ['error', 'all'],
@@ -36,8 +39,17 @@ module.exports = {
       { blankLine: 'always', prev: '*', next: ['const', 'let'] },
       { blankLine: 'any', prev: ['const', 'let'], next: ['const', 'let'] },
       { blankLine: 'always', next: '*', prev: ['import', 'export'] },
-      { blankLine: 'any', prev: ['import', 'export'], next: ['import', 'export'] },
-      { blankLine: 'always', prev: '*', next: ['if', 'for', 'while', 'switch', 'return'] },
+      {
+        blankLine: 'any',
+        prev: ['import', 'export'],
+        next: ['import', 'export'],
+      },
+
+      {
+        blankLine: 'always',
+        prev: '*',
+        next: ['if', 'for', 'while', 'switch', 'return'],
+      },
     ],
 
     'react/jsx-filename-extension': ['error', { extensions: ['.jsx', '.tsx'] }],
@@ -48,17 +60,28 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'import/order': [
       'warn',
+
       {
-        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+        groups: [
+          'builtin',
+          'external',
+          'internal',
+          'parent',
+          'sibling',
+          'index',
+        ],
+
         'newlines-between': 'always',
       },
     ],
+
     'import/first': 1,
     'import/no-duplicates': 2,
     'import/newline-after-import': 1,
     'import/no-unresolved': 'off',
     'import/no-anonymous-default-export': [
       'error',
+
       {
         allowArray: false,
         allowArrowFunction: false,
@@ -72,6 +95,7 @@ module.exports = {
     'sonarjs/cognitive-complexity': ['error', 18],
     'react-hooks/exhaustive-deps': 'warn',
   },
+
   overrides: [
     {
       files: ['**/*.stories.*'],
