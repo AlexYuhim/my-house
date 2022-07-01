@@ -1,3 +1,6 @@
+/* stylelint-disable selector-class-pattern */
+/* stylelint-disable indentation */
+
 .button {
   display: flex;
   align-items: center;
@@ -8,6 +11,7 @@
   padding: 14px 28px;
   font-size: 14px;
   font-weight: 700;
+  /* stylelint-disable-next-line declaration-block-no-duplicate-properties */
   border: 1px solid transparent;
 }
 
