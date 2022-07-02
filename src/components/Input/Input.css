@@ -20,8 +20,8 @@
 }
 
 .input__inputField {
-  left: 35px;
   position: absolute;
+  left: 35px;
   background-color: transparent;
   border: none;
   outline: none;
